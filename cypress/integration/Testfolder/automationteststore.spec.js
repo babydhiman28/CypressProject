@@ -1,0 +1,25 @@
+/// <reference types="cypress"/>
+
+describe('customSuite', function()
+{
+    it('LoginTest-FirstCase', function()
+    {
+        cy.visit('https://automationteststore.com/')
+        cy.contains('Login or register').click()
+        cy.get('[title="Continue"]').click()
+        cy.get('[name="firstname"]').type('Arshpreet')
+        cy.get('[name="lastname"]').type('kaur')
+        cy.get('[id="AccountFrm_email"]').type('arshkaur21@gmail.com')
+        cy.get('[id="AccountFrm_address_1"]').type('5656, Avenue Park')
+        cy.get('[name="city"]').type('Montreal')
+        cy.get('[id="AccountFrm_zone_id"]').select('Aberdeen')
+        cy.get('[id="AccountFrm_postcode"]').type('H3N5G6')
+        cy.get('[id="AccountFrm_country_id"]').select('Canada')
+        cy.get('[name="loginname"]').type('arshkaur123')
+        cy.get('[id="AccountFrm_password"]').type('arshkaur@123')
+        cy.get('[id="AccountFrm_confirm"]').type('arshkaur@123')
+        cy.get('[id="AccountFrm_newsletter1"]').check({force:true})
+        cy.get('[id="AccountFrm_agree"]').check({force:true})
+        cy.get('[title="Continue"]').click()
+    })
+})
